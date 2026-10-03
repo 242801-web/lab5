@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Website - Lab 05</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        body {
+            background-color: #f4f6f9;
+            font-family: Arial, sans-serif;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            background-color: #222;
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: white !important;
+        }
+
+        .nav-link {
+            margin-left: 15px;
+        }
+
+        /* REGISTRATION */
+
+        .registration-section {
+            padding: 60px 0;
+        }
+
+        .registration-box {
+            background-color: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .student-information {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .student-information-header {
+            background-color: #212529;
+            color: white;
+            padding: 15px;
+        }
+
+        .student-information-body {
+            padding: 20px;
+        }
+
+        /* LAB 05 */
+
+        #lab05 {
+            padding: 50px 0;
+        }
+
+        .lab-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .task-card {
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-box {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .student-card {
+            margin-top: 15px;
+        }
+
+        .success-message {
+            color: green;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<nav class="navbar navbar-expand-lg">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="#">
+            My Website
+        </a>
+
+        <div class="d-flex gap-3">
+
+            <a class="nav-link" href="#home">
+                Home
+            </a>
+
+            <a class="nav-link" href="#about">
+                About
+            </a>
+
+            <a class="nav-link" href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================================================
+     EXISTING STUDENT REGISTRATION SECTION
+========================================================= -->
+
+<section id="home" class="registration-section">
+
+    <div class="container">
+
+        <div class="registration-box">
+
+            <h1 class="text-center mb-4">
+                Student Registration
+            </h1>
+
+
+            <div class="row">
+
+                <!-- FORM -->
+
+                <div class="col-md-6">
+
+                    <form id="registrationForm">
+
+                        <div class="mb-4">
+
+                            <label for="studentName" class="form-label">
+                                Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="studentName"
+                                class="form-control"
+                                placeholder="Enter your name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="mb-4">
+
+                            <label for="studentEmail" class="form-label">
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="studentEmail"
+                                class="form-control"
+                                placeholder="Enter your email"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="mb-4">
+
+                            <label for="studentAge" class="form-label">
+                                Age
+                            </label>
+
+                            <input
+                                type="number"
+                                id="studentAge"
+                                class="form-control"
+                                placeholder="Enter your age"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="mb-4">
+
+                            <label for="department" class="form-label">
+                                Department
+                            </label>
+
+                            <select id="department" class="form-select">
+
+                                <option value="Computer Science">
+                                    Computer Science
+                                </option>
+
+                                <option value="Software Engineering">
+                                    Software Engineering
+                                </option>
+
+                                <option value="Information Technology">
+                                    Information Technology
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                        >
+                            Register
+                        </button>
+
+
+                        <button
+                            type="reset"
+                            class="btn btn-secondary"
+                        >
+                            Reset
+                        </button>
+
+
+                        <p
+                            id="registrationMessage"
+                            class="mt-4"
+                        ></p>
+
+                    </form>
+
+                </div>
+
+
+                <!-- STUDENT INFORMATION -->
+
+                <div class="col-md-6">
+
+                    <div class="student-information">
+
+                        <div class="student-information-header">
+
+                            <h5 class="mb-0">
+                                Student Information
+                            </h5>
+
+                        </div>
+
+
+                        <div class="student-information-body">
+
+                            <h4 id="welcomeMessage">
+                                Welcome Student
+                            </h4>
+
+                            <p id="studentInformationText">
+                                Please enter your information in the
+                                registration form.
+                            </p>
+
+                            <button
+                                id="studentButton"
+                                class="btn btn-primary"
+                            >
+                                Click Me
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section id="about" class="container py-5">
+
+    <h2>
+        About
+    </h2>
+
+    <p>
+        This webpage contains the Student Registration system
+        and Lab 05 JavaScript tasks.
+    </p>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section id="contact" class="container py-5">
+
+    <h2>
+        Contact
+    </h2>
+
+    <p>
+        Full Stack Web Development - Lab 05
+    </p>
+
+</section>
+
+
+
+<!-- =========================================================
+     LAB 05
+========================================================= -->
+
+<section id="lab05">
+
+    <div class="container">
+
+
+        <div class="lab-title">
+
+            <h1>
+                Lab 05
+            </h1>
+
+            <p>
+                Full Stack Web Development
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             TASK 1
+        ================================================== -->
+
+        <div class="card task-card">
+
+            <div class="card-header bg-dark text-white">
+
+                <h3 class="mb-0">
+                    Task 1 - University Course Enrollment Manager
+                </h3>
+
+            </div>
+
+
+            <div class="card-body">
+
+                <p>
+                    This task demonstrates Spread Operator,
+                    Rest Parameters and ES6 features.
+                </p>
+
+
+                <div
+                    id="task1Output"
+                    class="result-box"
+                ></div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             TASK 2
+        ================================================== -->
+
+        <div class="card task-card">
+
+            <div class="card-header bg-dark text-white">
+
+                <h3 class="mb-0">
+                    Task 2 - Student Utility Module
+                </h3>
+
+            </div>
+
+
+            <div class="card-body">
+
+                <div
+                    id="task2Output"
+                ></div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             TASK 3
+        ================================================== -->
+
+        <div class="card task-card">
+
+            <div class="card-header bg-dark text-white">
+
+                <h3 class="mb-0">
+                    Task 3 - Online Examination Workflow
+                </h3>
+
+            </div>
+
+
+            <div class="card-body">
+
+
+                <h5>
+                    Valid Roll Number
+                </h5>
+
+                <div
+                    id="task3ValidOutput"
+                    class="result-box"
+                ></div>
+
+
+                <h5 class="mt-4">
+                    Empty Roll Number
+                </h5>
+
+                <div
+                    id="task3ErrorOutput"
+                    class="result-box"
+                ></div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             TASK 4
+        ================================================== -->
+
+        <div class="card task-card">
+
+            <div class="card-header bg-dark text-white">
+
+                <h3 class="mb-0">
+                    Task 4 - University Result Portal
+                </h3>
+
+            </div>
+
+
+            <div class="card-body">
+
+
+                <!-- SEARCH FORM -->
+
+                <h5>
+                    Search Student Result
+                </h5>
+
+
+                <div class="mb-3">
+
+                    <label
+                        for="rollNumberInput"
+                        class="form-label"
+                    >
+                        Roll Number
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="rollNumberInput"
+                        class="form-control"
+                        placeholder="Example: BSCS-001"
+                    >
+
+                </div>
+
+
+                <button
+                    id="searchButton"
+                    class="btn btn-primary"
+                >
+                    Search Result
+                </button>
+
+
+                <button
+                    id="loadAllButton"
+                    class="btn btn-secondary"
+                >
+                    Load All Results
+                </button>
+
+
+                <!-- SEARCH OUTPUT -->
+
+                <div
+                    id="task4SearchOutput"
+                    class="mt-4"
+                ></div>
+
+
+                <!-- ALL RESULTS -->
+
+                <div
+                    id="task4AllOutput"
+                    class="mt-4"
+                ></div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT MODULE
+========================================================= -->
+
+<script
+    type="module"
+    src="./lab05.js"
+></script>
+
+
+</body>
+
+</html>
